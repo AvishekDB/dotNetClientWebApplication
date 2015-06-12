@@ -97,5 +97,10 @@ namespace Client_Web_Application
         {
             Response.Redirect("Course_Details.aspx");
         }
+
+        protected void btnCrsRgs_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Course_Details.aspx");
+        }
     }
 }

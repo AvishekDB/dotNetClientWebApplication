@@ -28,7 +28,7 @@
         <asp:TextBox ID="txtRole" runat="server" style="z-index: 1; left: 253px; top: 172px; position: absolute; width: 212px"></asp:TextBox>
         <asp:Label ID="lblType" runat="server" style="z-index: 1; left: 25px; top: 170px; position: absolute; width: 65px" Text="Enter your Role"></asp:Label>
         <br />
-        <asp:Button ID="btnCrsRgs" runat="server" style="z-index: 1; left: 210px; top: 356px; position: absolute; width: 164px; right: 911px" Text="Enter Registration Details" />
+        <asp:Button ID="btnCrsRgs" runat="server" style="z-index: 1; left: 210px; top: 356px; position: absolute; width: 164px; right: 911px" Text="Enter Registration Details" OnClick="btnCrsRgs_Click" />
         <br />
         <asp:Label ID="lblOutput" runat="server" style="z-index: 1; left: 16px; top: 304px; position: absolute; width: 314px; height: 27px"></asp:Label>
         <br />
