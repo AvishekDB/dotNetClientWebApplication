@@ -29,11 +29,11 @@
                           <wsp:Policy>
                             <sp:ProtectionToken>
                               <wsp:Policy>
-                                <sp:SpnegoContextToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                                <mssp:SslContextToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient" xmlns:mssp="http://schemas.microsoft.com/ws/2005/07/securitypolicy">
                                   <wsp:Policy>
                                     <sp:RequireDerivedKeys />
                                   </wsp:Policy>
-                                </sp:SpnegoContextToken>
+                                </mssp:SslContextToken>
                               </wsp:Policy>
                             </sp:ProtectionToken>
                             <sp:AlgorithmSuite>
@@ -51,6 +51,15 @@
                             <sp:OnlySignEntireHeadersAndBody />
                           </wsp:Policy>
                         </sp:SymmetricBinding>
+                        <sp:SignedSupportingTokens>
+                          <wsp:Policy>
+                            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                              <wsp:Policy>
+                                <sp:WssUsernameToken10 />
+                              </wsp:Policy>
+                            </sp:UsernameToken>
+                          </wsp:Policy>
+                        </sp:SignedSupportingTokens>
                         <sp:Wss11>
                           <wsp:Policy />
                         </sp:Wss11>
@@ -233,7 +242,11 @@
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:8080/HelloService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>AVISHEK\AVISHEK</Upn>
+          <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <X509Data>
+              <X509Certificate>MIIB0TCCATqgAwIBAgIQbxcXdGQftI1JLaq8RGpt5TANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDEwlsb2NhbGhvc3QwHhcNMTUwNDE0MDgxOTIwWhcNMjAwNDE0MDAwMDAwWjAUMRIwEAYDVQQDEwlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMv6MOgRefzuEqNNBdriugN+pwUtZwopqunEw4WDvMBUb2sFNp7lPmkMrLRjGyWYx4vckxkH0dB1uhOaikrIJE+jnOupOpwI9qWqRLxBWuxz91Q2WkSA0se4NY3FLe4Vv1qKzuP7B/EJQzPK2nimADVUOVlFGidXJPPErj2RoMcBAgMBAAGjJDAiMAsGA1UdDwQEAwIEsDATBgNVHSUEDDAKBggrBgEFBQcDATANBgkqhkiG9w0BAQUFAAOBgQDGl/s8YLKrM6MLgv+SM82/rncD8yVMtFPP4e94su/LcX0pPP1aBKv2AgerH6h3PR+ngks81XhT7wx4XYJuOv91Y0JaWN5iJR4baTHRxQeZ00V++7bLNpqnuhXw4vBeX9zOVa2PA8HAaxaldtT57jBNNp2cBxdv3VNlSe8dfhXw+Q==</X509Certificate>
+            </X509Data>
+          </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

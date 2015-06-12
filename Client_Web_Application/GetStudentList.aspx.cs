@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.ServiceModel;
 
 namespace Client_Web_Application
 {
     public partial class SubmitAttendance : System.Web.UI.Page
     {
-        string classId;
+        static string classId;
         protected void Page_Load(object sender, EventArgs e)
         {
             GridViewStudentList.Visible = false;
@@ -17,18 +18,29 @@ namespace Client_Web_Application
 
         protected void btnGetStudentList_Click(object sender, EventArgs e)
         {
-           
+            String userName=Session["UserName"].ToString();
+            String passWord = Session["PassWord"].ToString();
             String date = txtDate.Text;
             DateTime dateTime = new DateTime();
             dateTime = DateTime.ParseExact(date, "yyyy-MM-dd", null);
 
-            classId = txtClassId.Text;
+            SubmitAttendance.classId   = txtClassId.Text;
 
             try
             {
                 TeamServiceReference.AttendanceServiceClient client = new TeamServiceReference.AttendanceServiceClient();
-                // List<string> receivedStudentList = client.getStudentList(date, courseId);
 
+                try
+                {
+                    client.ClientCredentials.UserName.UserName = userName;
+                    client.ClientCredentials.UserName.Password = passWord;
+                    client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.PeerOrChainTrust;
+                }
+                catch(Exception ex)
+                {
+                    lblMessage.Text = ex.Message.ToString();
+                }
+             
                 TeamServiceReference.SvcStudent[] receivedStudentList = client.GetStudentList(dateTime, classId);
 
               // string[] dbdh=ToArray<string>(receivedStudentList);
@@ -75,6 +87,8 @@ namespace Client_Web_Application
         {
             if (e.CommandName == "studentPresent")
             {
+                String userName = Session["UserName"].ToString();
+                String passWord = Session["PassWord"].ToString();
                 // Retrieve the row index stored in the CommandArgument property.
                 int index = Convert.ToInt32(e.CommandArgument);
                 TeamServiceReference.Result result = new TeamServiceReference.Result();
@@ -82,6 +96,17 @@ namespace Client_Web_Application
                 GridViewRow row = GridViewStudentList.Rows[index];
                 int id = Convert.ToInt32(row.Cells[7].Text);
                 TeamServiceReference.AttendanceServiceClient client = new TeamServiceReference.AttendanceServiceClient();
+                try
+                {
+                    client.ClientCredentials.UserName.UserName = userName;
+                    client.ClientCredentials.UserName.Password = passWord;
+                    client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.PeerOrChainTrust;
+                }
+                catch (Exception ex)
+                {
+                    lblMessage.Text = ex.Message.ToString();
+                }
+                string classid1 = SubmitAttendance.classId;
                result= client.SubmitAttendance(id, classId);
                lblMessage.Text = result.Message;
 

@@ -22,19 +22,23 @@
         <asp:Label ID="lblPawod" runat="server" style="z-index: 1; left: 24px; top: 119px; position: absolute; height: 19px; width: 108px" Text="Password"></asp:Label>
         <br />
         <br />
+        <asp:Label ID="lblMessage1" runat="server" style="z-index: 1; left: 553px; top: 173px; position: absolute; width: 475px" Text="Enter &quot;Teacher&quot; if you are a teacher and if you are a HR enter &quot;HR&quot; "></asp:Label>
         <br />
-        <asp:Button ID="btnVerify" runat="server" OnClick="btnVerify_Click" style="z-index: 1; left: 27px; top: 188px; position: absolute; width: 88px" Text="Log In" />
+        <asp:Button ID="btnVerify" runat="server" OnClick="btnVerify_Click" style="z-index: 1; left: 15px; top: 251px; position: absolute; width: 88px" Text="Log In" />
+        <asp:TextBox ID="txtRole" runat="server" style="z-index: 1; left: 253px; top: 172px; position: absolute; width: 212px"></asp:TextBox>
+        <asp:Label ID="lblType" runat="server" style="z-index: 1; left: 25px; top: 170px; position: absolute; width: 65px" Text="Enter your Role"></asp:Label>
+        <br />
+        <asp:Button ID="btnCrsRgs" runat="server" style="z-index: 1; left: 210px; top: 356px; position: absolute; width: 164px; right: 911px" Text="Enter Registration Details" />
+        <br />
+        <asp:Label ID="lblOutput" runat="server" style="z-index: 1; left: 16px; top: 304px; position: absolute; width: 314px; height: 27px"></asp:Label>
         <br />
         <br />
-        <asp:Label ID="lblOutput" runat="server" style="z-index: 1; left: 26px; top: 230px; position: absolute; width: 314px; height: 27px"></asp:Label>
         <br />
         <br />
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <asp:Button ID="btnGetStudentList" runat="server" style="z-index: 1; left: 25px; top: 317px; position: absolute; width: 116px" Text="Get Student List" OnClick="btnGetStudentList_Click" />
+        <asp:Button ID="btnGetStudentList" runat="server" style="z-index: 1; left: 24px; top: 355px; position: absolute; width: 116px" Text="Get Student List" OnClick="btnGetStudentList_Click" />
         <br />
         <br />
         <br />

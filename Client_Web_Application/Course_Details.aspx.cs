@@ -32,6 +32,9 @@ namespace Client_Web_Application
             string organizationSize;
             string salaryRange;
             bool isCompleted;
+
+            //TeamServiceReferenceCourseRegistration.CourseRegistrationServiceClient client = new TeamServiceReferenceCourseRegistration.CourseRegistrationServiceClient();
+           
             TeamServiceReferenceCourseRegistration.Result result=new TeamServiceReferenceCourseRegistration.Result();
             TeamServiceReferenceCourseRegistration.SvcParticipant participant=new TeamServiceReferenceCourseRegistration.SvcParticipant();
             TeamServiceReferenceCourseRegistration.SvcCourseClass courseClass=new TeamServiceReferenceCourseRegistration.SvcCourseClass();
@@ -75,6 +78,18 @@ namespace Client_Web_Application
            
             
              TeamServiceReferenceCourseRegistration.CourseRegistrationServiceClient client = new TeamServiceReferenceCourseRegistration.CourseRegistrationServiceClient();
+             try
+             {
+                 String userName = Session["UserName"].ToString();
+                 String passWord = Session["PassWord"].ToString();
+                 client.ClientCredentials.UserName.UserName = userName;
+                 client.ClientCredentials.UserName.Password = passWord;
+                 client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.PeerOrChainTrust;
+             }
+             catch (Exception ex)
+             {
+                 lblMessage2.Text = ex.Message.ToString();
+             }
              
              result= client.RegisterCourseForEmployee(participant,courseClass);
              if (result!=null)
