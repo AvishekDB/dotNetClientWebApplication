@@ -4,3 +4,9 @@ c:\users\avishek\documents\visual studio 2013\Projects\Client_Web_Application\Cl
 c:\users\avishek\documents\visual studio 2013\Projects\Client_Web_Application\Client_Web_Application\obj\Debug\Client_Web_Application.csprojResolveAssemblyReference.cache
 c:\users\avishek\documents\visual studio 2013\Projects\Client_Web_Application\Client_Web_Application\obj\Debug\Client_Web_Application.dll
 c:\users\avishek\documents\visual studio 2013\Projects\Client_Web_Application\Client_Web_Application\obj\Debug\Client_Web_Application.pdb
+D:\dotNetClientWebApplication\Client_Web_Application\bin\Client_Web_Application.dll.config
+D:\dotNetClientWebApplication\Client_Web_Application\bin\Client_Web_Application.dll
+D:\dotNetClientWebApplication\Client_Web_Application\bin\Client_Web_Application.pdb
+D:\dotNetClientWebApplication\Client_Web_Application\obj\Debug\Client_Web_Application.csprojResolveAssemblyReference.cache
+D:\dotNetClientWebApplication\Client_Web_Application\obj\Debug\Client_Web_Application.dll
+D:\dotNetClientWebApplication\Client_Web_Application\obj\Debug\Client_Web_Application.pdb

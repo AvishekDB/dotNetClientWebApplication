@@ -38,7 +38,7 @@
                             </sp:ProtectionToken>
                             <sp:AlgorithmSuite>
                               <wsp:Policy>
-                                <sp:Basic256 />
+                                <sp:TripleDes />
                               </wsp:Policy>
                             </sp:AlgorithmSuite>
                             <sp:Layout>
@@ -78,7 +78,7 @@
             </sp:ProtectionToken>
             <sp:AlgorithmSuite>
               <wsp:Policy>
-                <sp:Basic256 />
+                <sp:TripleDes />
               </wsp:Policy>
             </sp:AlgorithmSuite>
             <sp:Layout>
@@ -244,7 +244,7 @@
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIB0TCCATqgAwIBAgIQbxcXdGQftI1JLaq8RGpt5TANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDEwlsb2NhbGhvc3QwHhcNMTUwNDE0MDgxOTIwWhcNMjAwNDE0MDAwMDAwWjAUMRIwEAYDVQQDEwlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMv6MOgRefzuEqNNBdriugN+pwUtZwopqunEw4WDvMBUb2sFNp7lPmkMrLRjGyWYx4vckxkH0dB1uhOaikrIJE+jnOupOpwI9qWqRLxBWuxz91Q2WkSA0se4NY3FLe4Vv1qKzuP7B/EJQzPK2nimADVUOVlFGidXJPPErj2RoMcBAgMBAAGjJDAiMAsGA1UdDwQEAwIEsDATBgNVHSUEDDAKBggrBgEFBQcDATANBgkqhkiG9w0BAQUFAAOBgQDGl/s8YLKrM6MLgv+SM82/rncD8yVMtFPP4e94su/LcX0pPP1aBKv2AgerH6h3PR+ngks81XhT7wx4XYJuOv91Y0JaWN5iJR4baTHRxQeZ00V++7bLNpqnuhXw4vBeX9zOVa2PA8HAaxaldtT57jBNNp2cBxdv3VNlSe8dfhXw+Q==</X509Certificate>
+              <X509Certificate>MIICNTCCAeOgAwIBAgIQD+KUW1n/OblMdBvF4jSyPDAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE1MDYyMTAzMDM0NVoXDTM5MTIzMTIzNTk1OVowFDESMBAGA1UEAxMJbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqWg2zVn0KuG5LgkT+bHC9JH9+IVXEiLRcp+CVhjFzJDMsQlIS8qRsIh6dH+v51MvMR7RK+zPl55+eLbVwkobJBTgOJlGgxUoVv+WlbS+avT9nMLVY1naPzrVyUNBYtMxM+eZZQKOnw1rMgsui8UwqBOtTIygbpEVNLHwm3QktTeZxs5xAKgpnYCM7HNcFumITJtvIt6e0DsepW9vf46Aqr+MDtjpfQYsbid8WrAjnuuNnaUiPF7+c0Pd+i15T8Ne8EQYf0JfWqsRZMYs6GZw+GMaeHcwZW/e5aQk/Ur1apFxLcXUa8VrCIneiHBC3d0XN1kNES8ROLTQewkHSM2R2wIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAD+N7HLrgaZkyeMNUBRGV6BXHoFIE9L5m5rsUQT07DXGDKSKZa7ZeCZ8/W0MeRAzcS/F2zNlbG2f/Q8kQ0AzAZo=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>

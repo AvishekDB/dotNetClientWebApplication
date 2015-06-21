@@ -22,7 +22,7 @@ namespace Client_Web_Application
             string userName = txtUserName.Text;
             string passWord = txtPawod.Text;
             Session["UserName"] = txtUserName.Text;
-            Session["PassWord"] = txtUserName.Text;
+            Session["PassWord"] = txtPawod.Text;
             if (txtRole.Text == "Teacher")
             {
                 try
