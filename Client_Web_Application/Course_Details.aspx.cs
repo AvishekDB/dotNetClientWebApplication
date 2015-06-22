@@ -12,6 +12,43 @@ namespace Client_Web_Application
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!IsPostBack)
+            {
+
+                //DropDown populating the Salary Range
+
+
+                string[] enumSalaryRange = Enum.GetNames(typeof(TeamServiceReferenceCourseRegistration.SalaryRange));
+                foreach (string item in enumSalaryRange)
+                {
+
+                    int value = (int)Enum.Parse(typeof(TeamServiceReferenceCourseRegistration.SalaryRange), item);
+                    ListItem listItem = new ListItem(item, value.ToString());
+                    DropDownList_SalaryRange.Items.Add(listItem);
+                }
+                //DropDown populating the Gender
+
+
+                string[] enumGender = Enum.GetNames(typeof(TeamServiceReferenceCourseRegistration.Gender));
+                foreach (string item in enumGender)
+                {
+
+                    int value = (int)Enum.Parse(typeof(TeamServiceReferenceCourseRegistration.Gender), item);
+                    ListItem listItem = new ListItem(item, value.ToString());
+                    DropDownList_Gender.Items.Add(listItem);
+                }
+                //DropDown populating the Organization Size
+
+
+                string[] enumOrganizationSize = Enum.GetNames(typeof(TeamServiceReferenceCourseRegistration.OrganizationSize));
+                foreach (string item in enumOrganizationSize)
+                {
+
+                    int value = (int)Enum.Parse(typeof(TeamServiceReferenceCourseRegistration.OrganizationSize), item);
+                    ListItem listItem = new ListItem(item, value.ToString());
+                    DropDownList_OrganizationSize.Items.Add(listItem);
+                }
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -46,16 +83,16 @@ namespace Client_Web_Application
               email=txtEmail.Text;
               employmentStatus=txtEmploymentStatus.Text;
               fullName=txtFullName.Text;
-              gender=txtGender.Text;
+              //gender=txtGender.Text;
               jobTitle=txtJobTitle.Text;
               idNumber=txtIdnumber.Text;
               nationality=txtNationality.Text;
-               organizationSize=txtOrganizationSite.Text;
+              // organizationSize=txtOrganizationSite.Text;
               classId=txtClassId.Text;
-              salaryRange=txtSalaryRange.Text;
+             // salaryRange=txtSalaryRange.Text;
               salutation = txtSalutation.Text;
+
             
-       
 
             participant.ContactNumber = contactNumber;
             participant.DateOfBirth=dateOfBirth;
@@ -64,14 +101,16 @@ namespace Client_Web_Application
             participant.Email= email;
             participant.EmploymentStatus= employmentStatus;
             participant.FullName=fullName;
-            TeamServiceReferenceCourseRegistration.Gender gender1 = (TeamServiceReferenceCourseRegistration.Gender)Enum.Parse(typeof(TeamServiceReferenceCourseRegistration.Gender), gender);
+
+            TeamServiceReferenceCourseRegistration.Gender gender1 = (TeamServiceReferenceCourseRegistration.Gender)Enum.Parse(typeof(TeamServiceReferenceCourseRegistration.Gender), DropDownList_Gender.SelectedItem.Value);
             participant.Gender = gender1;
             participant.JobTitle= jobTitle;
             participant.IdNumber= idNumber;
-            participant.Nationality= nationality;          
-            TeamServiceReferenceCourseRegistration.OrganizationSize organizationsize = (TeamServiceReferenceCourseRegistration.OrganizationSize)Enum.Parse(typeof(TeamServiceReferenceCourseRegistration.OrganizationSize), organizationSize);
+            participant.Nationality= nationality;
+           //Catching the Organization Size and entering them
+            TeamServiceReferenceCourseRegistration.OrganizationSize organizationsize = (TeamServiceReferenceCourseRegistration.OrganizationSize)Enum.Parse(typeof(TeamServiceReferenceCourseRegistration.OrganizationSize), DropDownList_OrganizationSize.SelectedItem.Value);
             participant.OrganizationSize = organizationsize;
-            TeamServiceReferenceCourseRegistration.SalaryRange salaryrange1 = (TeamServiceReferenceCourseRegistration.SalaryRange)Enum.Parse(typeof(TeamServiceReferenceCourseRegistration.SalaryRange), salaryRange);
+            TeamServiceReferenceCourseRegistration.SalaryRange salaryrange1 = (TeamServiceReferenceCourseRegistration.SalaryRange)Enum.Parse(typeof(TeamServiceReferenceCourseRegistration.SalaryRange), DropDownList_SalaryRange.SelectedItem.Value);
             participant.SalaryRange=salaryrange1;
             participant.Salutation = salutation;
             courseClass.ClassId=classId;

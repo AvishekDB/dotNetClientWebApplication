@@ -30,9 +30,12 @@
         <asp:TextBox ID="txtFullName" runat="server" style="z-index: 1; left: 254px; top: 81px; position: absolute"></asp:TextBox>
         <br />
         <asp:Label ID="lblEmploymentStatus" runat="server" style="z-index: 1; left: 120px; top: 423px; position: absolute" Text="Employment Status"></asp:Label>
+        <asp:DropDownList ID="DropDownList_OrganizationSize" runat="server" AutoPostBack="True" style="z-index: 1; left: 867px; top: 402px; position: absolute; height: 17px; width: 127px">
+        </asp:DropDownList>
         <br />
+        <asp:DropDownList ID="DropDownList_Gender" runat="server" style="z-index: 1; left: 865px; top: 198px; position: absolute; width: 120px">
+        </asp:DropDownList>
         <br />
-        <asp:TextBox ID="txtGender" runat="server" style="z-index: 1; left: 865px; top: 198px; position: absolute"></asp:TextBox>
         <br />
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 864px; top: 256px; position: absolute; height: 22px; right: 293px; bottom: 241px"></asp:TextBox>
         <br />
@@ -51,6 +54,8 @@
         <br />
         <asp:TextBox ID="txtIdnumber" runat="server" style="z-index: 1; left: 257px; top: 224px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtJobTitle" runat="server" style="z-index: 1; left: 268px; top: 290px; position: absolute"></asp:TextBox>
+        <asp:DropDownList ID="DropDownList_SalaryRange" runat="server" style="z-index: 1; left: 268px; top: 486px; position: absolute; height: 16px; width: 116px">
+        </asp:DropDownList>
         <br />
         <asp:Label ID="lblNationality" runat="server" style="z-index: 1; left: 699px; top: 469px; position: absolute" Text="Nationality"></asp:Label>
         <br />
@@ -71,9 +76,7 @@
         <br />
         <br />
         <asp:TextBox ID="txtDietryRequirements" runat="server" style="z-index: 1; left: 865px; top: 331px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtSalaryRange" runat="server" style="z-index: 1; left: 267px; top: 486px; position: absolute; right: 890px"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtOrganizationSite" runat="server" style="z-index: 1; left: 865px; top: 405px; position: absolute"></asp:TextBox>
         <br />
         <br />
         <asp:TextBox ID="txtNationality" runat="server" style="z-index: 1; left: 862px; top: 470px; position: absolute"></asp:TextBox>

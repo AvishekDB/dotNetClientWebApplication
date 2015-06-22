@@ -112,13 +112,22 @@ namespace Client_Web_Application {
         protected global::System.Web.UI.WebControls.Label lblEmploymentStatus;
         
         /// <summary>
-        /// txtGender control.
+        /// DropDownList_OrganizationSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGender;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_OrganizationSize;
+        
+        /// <summary>
+        /// DropDownList_Gender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Gender;
         
         /// <summary>
         /// txtEmail control.
@@ -202,6 +211,15 @@ namespace Client_Web_Application {
         protected global::System.Web.UI.WebControls.TextBox txtJobTitle;
         
         /// <summary>
+        /// DropDownList_SalaryRange control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_SalaryRange;
+        
+        /// <summary>
         /// lblNationality control.
         /// </summary>
         /// <remarks>
@@ -254,24 +272,6 @@ namespace Client_Web_Application {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDietryRequirements;
-        
-        /// <summary>
-        /// txtSalaryRange control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSalaryRange;
-        
-        /// <summary>
-        /// txtOrganizationSite control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrganizationSite;
         
         /// <summary>
         /// txtNationality control.

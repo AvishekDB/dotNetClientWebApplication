@@ -14,7 +14,7 @@
         <br />
         <br />
         <br />
-        <asp:TextBox ID="txtDate" runat="server" style="z-index: 1; left: 272px; top: 51px; position: absolute; height: 22px;"></asp:TextBox>
+        <asp:TextBox ID="txtDate" runat="server"  style="z-index: 1; left: 272px; top: 51px; position: absolute; height: 22px;"></asp:TextBox>
         <asp:Label ID="lblCourseId" runat="server" style="z-index: 1; left: 23px; top: 92px; position: absolute; width: 127px" Text="Enter Class Id"></asp:Label>
         <br />
         <asp:Label ID="lblEnterDate" runat="server" style="z-index: 1; left: 23px; top: 48px; position: absolute; height: 21px; width: 162px" Text="Enter Date"></asp:Label>
@@ -31,8 +31,7 @@
         <br />
         <br />
         <br />
-        .<br />
-        <asp:GridView ID="GridViewStudentList" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="GridViewStudentList_SelectedIndexChanged" OnRowCommand="GridViewStudentList_RowCommand">
+        .<asp:GridView ID="GridViewStudentList" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnSelectedIndexChanged="GridViewStudentList_SelectedIndexChanged" OnRowCommand="GridViewStudentList_RowCommand" OnRowCreated="GridViewStudentList_RowCreated">
             <AlternatingRowStyle BackColor="White" />
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -55,6 +54,7 @@
  
 </Columns>
         </asp:GridView>
+        <br />
         <br />
         <br />
         <br />
