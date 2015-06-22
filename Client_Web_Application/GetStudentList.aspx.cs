@@ -22,13 +22,13 @@ namespace Client_Web_Application
 
         protected void btnGetStudentList_Click(object sender, EventArgs e)
         {
-            String userName=Session["UserName"].ToString();
+            String userName = Session["UserName"].ToString();
             String passWord = Session["PassWord"].ToString();
             String date = txtDate.Text;
             DateTime dateTime = new DateTime();
             dateTime = DateTime.ParseExact(date, "yyyy-MM-dd", null);
 
-            SubmitAttendance.classId   = txtClassId.Text;
+            SubmitAttendance.classId = txtClassId.Text;
 
             try
             {
@@ -40,39 +40,42 @@ namespace Client_Web_Application
                     client.ClientCredentials.UserName.Password = passWord;
                     client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.PeerOrChainTrust;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     lblMessage.Text = ex.Message.ToString();
                 }
-             
-                TeamServiceReference.SvcStudent[] receivedStudentList = client.GetStudentList(dateTime, classId);
-
-              // string[] dbdh=ToArray<string>(receivedStudentList);
-                
-                if (receivedStudentList != null)
+                try
                 {
-                    GridViewStudentList.Visible = true;
-                    GridViewStudentList.DataSource = receivedStudentList;
-                    GridViewStudentList.DataBind();
-                    lblMessage.Text = "The list of student enrolled in class " + classId + " on " + dateTime + " are provided follow";
+                    TeamServiceReference.SvcStudent[] receivedStudentList = client.GetStudentList(dateTime, classId);
+
+                    if (receivedStudentList != null)
+                    {
+                        GridViewStudentList.Visible = true;
+                        GridViewStudentList.DataSource = receivedStudentList;
+                        GridViewStudentList.DataBind();
+                        lblMessage.Text = "The list of student enrolled in class " + classId + " on " + dateTime + " are provided follow";
+                    }
+                    else
+                    {
+                        lblMessage.Text = "You entered wrong Course Id and Date";
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    lblMessage.Text = "An error occured " + ex.ToString();
                 }
 
-                else
-                {
-                    lblMessage.Text = "You entered wrong Course Id and Date";
-                }
-            
+
+
+
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                lblMessage.Text = "An error occured " + ex.ToString();
+                lblMessage.Text = ex.Message.ToString();
             }
-
-           
-               
-            
-
-
         }
 
         protected void GridViewStudentList_SelectedIndexChanged(object sender, EventArgs e)
