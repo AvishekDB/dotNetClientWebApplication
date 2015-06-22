@@ -34,7 +34,15 @@ namespace Client_Web_Application
                    // client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.PeerOrChainTrust;
                     btnGetStudentList.Visible = true;
                     btnCrsRgs.Visible = false;
-                  //  lblOutput.Text = Session["PassWord"].ToString();
+                    btnVerify.Visible = false;
+                    txtUserName.Visible = false;
+                    txtPawod.Visible = false;
+                    txtRole.Visible = false;
+                    lblUserName.Visible = false;
+                    lblPawod.Visible = false;
+                    lblType.Visible = false;
+                    lblMessage1.Visible = false;
+                   
                 }
 
                 catch (Exception exception)
@@ -56,6 +64,14 @@ namespace Client_Web_Application
                     
                     btnGetStudentList.Visible = false;
                     btnCrsRgs.Visible = true;
+                    btnVerify.Visible = false;
+                    txtUserName.Visible = false;
+                    txtPawod.Visible = false;
+                    txtRole.Visible = false;
+                    lblUserName.Visible = false;
+                    lblPawod.Visible = false;
+                    lblType.Visible = false;
+                    lblMessage1.Visible = false;
                 }
 
                 catch (Exception exception)
